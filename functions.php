@@ -16,11 +16,10 @@
 
 // add_action( 'wp_enqueue_scripts', 'customscript' );
 
-function test() {
+function VeraCurrencyChange() {
 	?>
 	<script>
 		function geoip(json) {
-
 		// Get country code based on IP
 		var country_code = json.country_code;
 
@@ -30,9 +29,9 @@ function test() {
 				GB: '£9.99',
 				US: '$12.99',
 				CA: '$12.99',
-				ZA: 'R 1000',
+				ZA: '<?php echo the_field('netherlands'); ?>',
 				AU: '$14.99',
-				NZ: '$14.99',
+				NZ: '50',
 				NL: '€5000',
 				FR: '€11.99',
 				IN: '119 ₹',
@@ -51,17 +50,11 @@ function test() {
 		}
 
 		// Get the element we want to update by class
-		var price_elem = document.getElementsByClassName('update_price');
-
-		// Update each element on the page that uses this class
-		for (var i = 0; i < price_elem.length; i++) {
-			var str = price_elem[i].innerHTML;
-			price_elem[i].innerHTML = display_price;
-		}
+		$('.update_price').html(display_price); 
 		}
 	</script>
 
 <script async src="https://get.geojs.io/v1/ip/geo.js"></script>
 	<?php
 }
-add_action( 'wp_footer', 'test' );
+add_action( 'wp_footer', 'VeraCurrencyChange' );
