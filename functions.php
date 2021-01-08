@@ -1,21 +1,4 @@
 <?php
-/**
- * Functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package WordPress
- * @subpackage Twenty_Twenty_One
- * @since 1.0.0
- */
-
-// function customscript() {
-
-// 	wp_enqueue_script( 'customscript01', get_theme_file_uri( '/assets/js/custom.js' ), true );
-// }
-
-// add_action( 'wp_enqueue_scripts', 'customscript' );
-
 function VeraCurrencyChange() {
 	?>
 	<script>
